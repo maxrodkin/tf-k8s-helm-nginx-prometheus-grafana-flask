@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: flask
+  name: flask
+spec:
+  containers:
+  - image: calinrus/hit-counter
+    imagePullPolicy: Always
+    name: flask
+    ports:
+    - containerPort: 5000
+      protocol: TCP
+  hostAliases:
+  - ip: "redis_ip"
+    hostnames:
+    - "redis-lb"
