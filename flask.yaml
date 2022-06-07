@@ -4,6 +4,7 @@ metadata:
   labels:
     run: flask
   name: flask
+  namespace: ingress-nginx
 spec:
   containers:
   - image: calinrus/hit-counter
@@ -16,3 +17,17 @@ spec:
   - ip: "redis_ip"
     hostnames:
     - "redis-lb"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  namespace: ingress-nginx
+spec:
+  selector:
+    run: flask
+  ports:
+  - name: flask
+    protocol: TCP
+    port: 5000
+    targetPort: 5000
