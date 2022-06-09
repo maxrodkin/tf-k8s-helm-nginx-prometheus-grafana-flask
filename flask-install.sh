@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo docker pull calinrus/hit-counter
+#sudo docker pull calinrus/hit-counter
+sudo docker pull maxi4/hit-counter:prometheus_metrics
 sudo docker pull redis:alpine
 
 kubectl run redis-lb --image=redis:alpine --port=6379 --namespace=ingress-nginx
