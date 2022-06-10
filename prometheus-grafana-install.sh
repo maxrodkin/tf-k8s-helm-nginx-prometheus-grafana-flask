@@ -1,6 +1,7 @@
 #!/bin/bash
 helm upgrade --install ingress-nginx ingress-nginx   --repo https://kubernetes.github.io/ingress-nginx   --namespace ingress-nginx --create-namespace
 kubectl apply --kustomize github.com/kubernetes/ingress-nginx/deploy/prometheus/
+kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/prometheus/
 kubectl apply --kustomize github.com/kubernetes/ingress-nginx/deploy/grafana/
 kubectl apply -f nginx_ingress-prometheus-grafana-flask.yaml
 #and find the ingress ip:
