@@ -25,6 +25,7 @@ metadata:
   name: flask-service
   namespace: ingress-nginx
 spec:
+  type: NodePort
   selector:
     run: flask
   ports:
@@ -32,3 +33,4 @@ spec:
     protocol: TCP
     port: 5000
     targetPort: 5000
+    nodePort: 30007

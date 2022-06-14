@@ -16,4 +16,4 @@ spec:
   selector:
     run: flask
   sessionAffinity: None
-  type: ClusterIP
+  type: NodePort
