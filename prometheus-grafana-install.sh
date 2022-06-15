@@ -6,6 +6,9 @@ kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/prometheus/
 
 public_hostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname|tr -d " \t\n\r") && echo $public_hostname
 
+#vault
+./vault-install.sh
+
 #grafana
 sed -r "s/;domain = localhost/domain = $public_hostname/" grafana.ini > grafana.ini.updated
 sed -ri "s/;root_url/root_url/" grafana.ini.updated 
