@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -v
 sudo apt install -y jq
 
 #kubectl apply -f data-vault.yaml
