@@ -5,6 +5,6 @@
 #./get_helm.sh      
 #./k8s_install.sh                 
 #./flask-install.sh   
-./helm_install.sh  
-#./prometheus-grafana-install.sh  
+#./helm_install.sh  
+./prometheus-grafana-install.sh  
 #./vault-install.sh
