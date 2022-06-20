@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "454802319560_Tours-Admin-UserRole"
+  profile = var.aws_profile
   region = var.region
 }
 
