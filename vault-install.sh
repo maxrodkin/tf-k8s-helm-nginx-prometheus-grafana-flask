@@ -1,4 +1,6 @@
 #!/bin/bash
+sudo apt install -y jq
+
 #kubectl apply -f data-vault.yaml
 sed -r "s/name: data-vault/name: data-vault-0/" data-vault.yaml | kubectl apply -f -
 sed -r "s/name: data-vault/name: data-vault-1/" data-vault.yaml | kubectl apply -f -
