@@ -22,7 +22,13 @@ EOF
 
 ip a|grep inet|grep 192.168.0
 
-sudo cp -f config.toml /etc/containerd/config.toml
+#sudo cp -f config.toml /etc/containerd/config.toml
+sudo systemctl stop containerd
+sudo rm /etc/containerd/config.toml
+containerd config default > config.toml
+sudo cp config.toml /etc/containerd/config.toml
+sudo systemctl start containerd
+sudo systemctl status containerd
 sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 
 mkdir -p $HOME/.kube && \
