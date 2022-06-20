@@ -1,6 +1,0 @@
-vpc_id = "vpc-05f12bfd0a4a74ea0"
-subnet_id = "subnet-0a54460a0f97ac97e"
-security_group_id = "sg-0d27aff694c082ff8"
-ami = "ami-08d4ac5b634553e16"
-key_name = "Jira-Task-SO-533"
-region = "us-east-1"
