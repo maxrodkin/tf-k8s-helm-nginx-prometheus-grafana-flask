@@ -1,5 +1,6 @@
 #!/bin/bash
 kubectl create ns ingress-nginx
+sleep 10
 sudo docker pull maxi4/hit-counter:prometheus_metrics
 sudo docker pull redis:alpine
 
