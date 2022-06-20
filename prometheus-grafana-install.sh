@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -v
 #ingress controller
 helm upgrade --install ingress-nginx ingress-nginx   --repo https://kubernetes.github.io/ingress-nginx   --namespace ingress-nginx --create-namespace
 #prometheus
