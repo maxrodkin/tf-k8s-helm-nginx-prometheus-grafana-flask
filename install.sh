@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 git clone https://github.com/maxrodkin/tf-k8s-helm-nginx-prometheus-grafana-flask.git
 cd tf-k8s-helm-nginx-prometheus-grafana-flask
 ./docker_install.sh  
