@@ -1,5 +1,5 @@
 #!/bin/bash
-#sudo docker pull calinrus/hit-counter
+kubectl create ns ingress-nginx
 sudo docker pull maxi4/hit-counter:prometheus_metrics
 sudo docker pull redis:alpine
 
