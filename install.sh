@@ -7,4 +7,4 @@ cd tf-k8s-helm-nginx-prometheus-grafana-flask
 ./flask-install.sh   
 ./helm_install.sh  
 ./prometheus-grafana-install.sh  
-#./vault-install.sh
+./vault-install.sh
