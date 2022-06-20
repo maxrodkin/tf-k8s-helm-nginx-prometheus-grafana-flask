@@ -28,7 +28,7 @@ sudo rm /etc/containerd/config.toml
 containerd config default > config.toml
 sudo cp config.toml /etc/containerd/config.toml
 sudo systemctl start containerd
-sudo systemctl status containerd
+sudo systemctl status containerd | cat
 sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 
 mkdir -p $HOME/.kube && \
