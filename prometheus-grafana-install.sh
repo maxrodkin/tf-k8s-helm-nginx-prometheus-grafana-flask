@@ -21,4 +21,5 @@ kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/grafana/
 kubectl apply -f nginx_ingress-prometheus-grafana-flask.yaml
 
 #grafana admin pass
-kubectl exec -it $( kubectl get pods -o=name -n ingress-nginx| grep grafana) -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
+grafana_pod_name=$(kubectl get pods -o=name -n ingress-nginx| grep grafana)
+kubectl exec $grafana_pod_name -it  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
