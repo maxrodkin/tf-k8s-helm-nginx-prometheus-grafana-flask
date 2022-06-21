@@ -22,4 +22,5 @@ kubectl apply -f nginx_ingress-prometheus-grafana-flask.yaml
 
 #grafana admin pass
 grafana_pod_name=$(kubectl get pods -o=name -n ingress-nginx| grep grafana)
+echo $grafana_pod_name
 kubectl exec $grafana_pod_name -it  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
