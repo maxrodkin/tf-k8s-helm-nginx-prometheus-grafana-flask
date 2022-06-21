@@ -17,6 +17,10 @@ spec:
     ports:
     - containerPort: 6379
       protocol: TCP 
+  hostAliases:
+  - ip: "127.0.0.1"
+    hostnames:
+    - "redis-lb"      
 ---
 apiVersion: v1
 kind: Service
