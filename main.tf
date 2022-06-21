@@ -30,7 +30,7 @@ resource "aws_instance" "k8s" {
     OS = "UBUNTU"
     Managed = "IAC"
   }
-  user_data = << EOF
+  user_data = <<EOF
 #!/bin/bash
 git clone https://github.com/maxrodkin/tf-k8s-helm-nginx-prometheus-grafana-flask.git \
 && cd tf-k8s-helm-nginx-prometheus-grafana-flask
@@ -38,10 +38,10 @@ git clone https://github.com/maxrodkin/tf-k8s-helm-nginx-prometheus-grafana-flas
 ./get_helm.sh      
 ./k8s_install.sh                 
 ./flask-install.sh   
-./prometheus-grafana-install.sh  
+./prometheus-grafana-install.sh
+
 EOF
 
-}
 }
 
 
