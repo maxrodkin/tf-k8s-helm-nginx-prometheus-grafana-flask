@@ -30,4 +30,4 @@ sleep 5
 #https://stackoverflow.com/questions/60826194/kubectl-exec-fails-with-the-error-unable-to-use-a-tty-input-is-not-a-terminal
 #have to remove -t flag:
 #kubectl exec $grafana_pod_name -it  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
-kubectl exec "$grafana_pod_name" -i  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
+eval "kubectl exec $grafana_pod_name -i  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1"
