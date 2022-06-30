@@ -1,4 +1,5 @@
 #!/bin/bash -v
+export KUBECONFIG=/etc/kubernetes/admin.conf
 kubectl create ns ingress-nginx
 sudo docker pull maxi4/hit-counter:prometheus_metrics
 sudo docker pull redis:alpine
