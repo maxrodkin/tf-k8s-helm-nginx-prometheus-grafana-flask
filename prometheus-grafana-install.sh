@@ -22,10 +22,12 @@ kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/grafana/
 kubectl apply -f nginx_ingress-prometheus-grafana-flask.yaml
 
 #grafana admin pass
+sleep 5
 grafana_pod_name=$(kubectl get pods -o=name -n ingress-nginx| grep grafana)
 echo $grafana_pod_name
+sleep 5
 #because of :
 #https://stackoverflow.com/questions/60826194/kubectl-exec-fails-with-the-error-unable-to-use-a-tty-input-is-not-a-terminal
 #have to remove -t flag:
 #kubectl exec $grafana_pod_name -it  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
-kubectl exec $grafana_pod_name -i  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
+kubectl exec "$grafana_pod_name" -i  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
