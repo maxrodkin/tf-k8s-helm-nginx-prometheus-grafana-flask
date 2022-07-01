@@ -3,7 +3,7 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 kubectl create ns ingress-nginx
 sudo docker pull maxi4/hit-counter:prometheus_metrics
 sudo docker pull redis:alpine
-
+sleep 10
 #kubectl run redis-lb --image=redis:alpine --port=6379 --namespace=ingress-nginx
 #sleep 10
 
