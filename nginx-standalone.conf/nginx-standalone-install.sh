@@ -1,6 +1,9 @@
 #!/bin/bash -v
 export KUBECONFIG=/etc/kubernetes/admin.conf
 
+reldir="$( dirname -- "$0"; )";
+cd "$reldir";
+
 kubectl delete configmap nginx-standalone-nginx.conf -n ingress-nginx > /dev/null
 kubectl delete configmap nginx-standalone-default.conf -n ingress-nginx > /dev/null
 kubectl create configmap nginx-standalone-nginx.conf -n ingress-nginx --from-file=./nginx.conf
