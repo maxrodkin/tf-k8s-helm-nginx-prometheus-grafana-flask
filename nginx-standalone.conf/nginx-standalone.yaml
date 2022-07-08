@@ -23,16 +23,16 @@ spec:
         - containerPort: 80
         volumeMounts:
           - mountPath: /etc/nginx/nginx.conf
-            name: nginx-standalone-nginx.conf
+            name: nginx-standalone-nginx-conf
             subPath: nginx.conf
           - mountPath: /etc/nginx/conf.d/default.conf
-            name: nginx-standalone-default.conf
+            name: nginx-standalone-default-conf
             subPath: default.conf
       volumes:
-      - name: nginx-standalone-nginx.conf
+      - name: nginx-standalone-nginx-conf
         configMap:
           name: nginx-standalone-nginx.conf
-      - name: nginx-standalone-default.conf        
+      - name: nginx-standalone-default-conf        
         configMap:
           name: nginx-standalone-default.conf
      
