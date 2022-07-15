@@ -15,9 +15,10 @@ sed -r "s/;domain = localhost/domain = $public_hostname/" grafana.ini > grafana.
 sed -ri "s/;root_url/root_url/" grafana.ini.updated 
 #"root_url = %(protocol)s://%(domain)s:%(http_port)s/"
 sed -ri "s/;serve_from_sub_path = false/serve_from_sub_path = true/" grafana.ini.updated 
-kubectl delete configmap grafana.ini -n ingress-nginx > /dev/null
-kubectl create configmap grafana.ini -n ingress-nginx --from-file=./grafana.ini.updated
-kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/grafana/ 
+kubectl delete configmap grafana.ini -n ingress-nginx > /dev/null \
+&& kubectl create configmap grafana.ini -n ingress-nginx --from-file=./grafana.ini.updated 
+sleep 15
+&& kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/grafana/ 
 
 #ingress
 kubectl apply -f nginx_ingress-prometheus-grafana-flask.yaml
