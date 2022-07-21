@@ -8,4 +8,6 @@ git clone https://github.com/maxrodkin/tf-k8s-helm-nginx-prometheus-grafana-flas
 ./flask-install.sh   
 ./prometheus-grafana-install.sh  
 #./vault-install.sh
-./nginx-standalone.conf/nginx-standalone-install.sh
+
+cd nginx-standalone.conf
+./nginx-standalone-install.sh
