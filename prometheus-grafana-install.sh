@@ -12,8 +12,8 @@ public_hostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostnam
 
 #grafana
 #correct ini
-#
-#
+#https://grafana.com/tutorials/run-grafana-behind-a-proxy/
+#https://lvinsf.medium.com/grafana-behind-nginx-reverse-proxy-24ef08da7ad9
 ############################################################
 #################################### Server ####################################
 #[server]
@@ -25,7 +25,7 @@ public_hostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostnam
 sed -r "s/;domain = localhost/domain = $public_hostname/" grafana.ini > grafana.ini.updated
 #sed -ri "s/;root_url/root_url/" grafana.ini.updated 
 sed -ri "s/;serve_from_sub_path = false/serve_from_sub_path = true/" grafana.ini.updated 
-sed -ri "s/;http_port = 3000/http_port = 3000/" grafana.ini.updated 
+`sed -ri "s/;http_port = 3000/http_port = 3000/" grafana.ini.updated` 
 #need one more sed for 'root_url'
 
 kubectl delete configmap grafana.ini -n ingress-nginx > /dev/null \
