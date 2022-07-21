@@ -28,8 +28,8 @@ sed -ri "s/;serve_from_sub_path = false/serve_from_sub_path = true/" grafana.ini
 `sed -ri "s/;http_port = 3000/http_port = 3000/" grafana.ini.updated` 
 #need one more sed for 'root_url'
 
-kubectl delete configmap grafana.ini -n ingress-nginx > /dev/null \
-&& kubectl create configmap grafana.ini -n ingress-nginx --from-file=./grafana.ini.updated 
+kubectl delete configmap grafana.ini -n ingress-nginx > /dev/null
+kubectl create configmap grafana.ini -n ingress-nginx --from-file=./grafana.ini.updated 
 sleep 15 \
 && kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/grafana/ 
 
