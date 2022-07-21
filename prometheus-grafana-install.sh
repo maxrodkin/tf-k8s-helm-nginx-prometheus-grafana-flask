@@ -11,13 +11,26 @@ public_hostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostnam
 ./vault-install.sh
 
 #grafana
+#correct ini
+#
+#
+############################################################
+#################################### Server ####################################
+#[server]
+#http_port = 3000
+#root_url = %(protocol)s://%(domain)s:%(http_port)s/grafana/
+#serve_from_sub_path = true
+#############################################################
+
 sed -r "s/;domain = localhost/domain = $public_hostname/" grafana.ini > grafana.ini.updated
-sed -ri "s/;root_url/root_url/" grafana.ini.updated 
-#"root_url = %(protocol)s://%(domain)s:%(http_port)s/"
+#sed -ri "s/;root_url/root_url/" grafana.ini.updated 
 sed -ri "s/;serve_from_sub_path = false/serve_from_sub_path = true/" grafana.ini.updated 
+sed -ri "s/;http_port = 3000/http_port = 3000/" grafana.ini.updated 
+#need one more sed for 'root_url'
+
 kubectl delete configmap grafana.ini -n ingress-nginx > /dev/null \
 && kubectl create configmap grafana.ini -n ingress-nginx --from-file=./grafana.ini.updated 
-sleep 15
+sleep 15 \
 && kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/grafana/ 
 
 #ingress
