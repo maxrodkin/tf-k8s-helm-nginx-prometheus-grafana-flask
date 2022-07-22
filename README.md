@@ -41,7 +41,21 @@ clone the repo 8-) like that:
     git clone https://github.com/maxrodkin/tf-k8s-helm-nginx-prometheus-grafana-flask.git \
     && cd tf-k8s-helm-nginx-prometheus-grafana-flask
 
-and 
+and also, you have to create the variables file for the Terraform, for example:
+
+    $ cat default.tfvars 
+    vpc_id = "vpc-YOURs"
+    subnet_id = "subnet-YOURs"
+    security_group_id = "sg-YOURs"
+    ami = "SOME UBUNTU AMI"
+    key_name = "your_key_name"
+    region = "us-east-1"
+    aws_profile = "default"
+
+please replace the "-YOURs" signature with your meangfull values 8-)
+I assume that you have already vpc_id, subnet_id, security_group_id ... under your hand.
+
+
 I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
 
 
