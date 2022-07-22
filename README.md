@@ -48,152 +48,44 @@ and also, you have to create the variables file for the Terraform, for example:
     subnet_id = "subnet-YOURs"
     security_group_id = "sg-YOURs"
     ami = "SOME UBUNTU AMI"
-    key_name = "your_key_name"
-    region = "us-east-1"
+    key_name = "key_name-YOURs"
+    region = "us-east-1 or -YOURs 8-)"
     aws_profile = "default"
 
 please replace the "-YOURs" signature with your meangfull values 8-)
 I assume that you have already vpc_id, subnet_id, security_group_id ... under your hand.
-
-
-I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
-
-
-# Files
-
-StackEdit stores your files in your browser, which means all your files are automatically saved locally and are accessible **offline!**
-
-## Create files and folders
-
-The file explorer is accessible using the button in left corner of the navigation bar. You can create a new file by clicking the **New file** button in the file explorer. You can also create folders by clicking the **New folder** button.
-
-## Switch to another file
-
-All your files and folders are presented as a tree in the file explorer. You can switch from one to another by clicking a file in the tree.
-
-## Rename a file
-
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## Delete a file
-
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Export a file
-
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
-
-
-# Synchronization
-
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
-
-There are two types of synchronization and they can complement each other:
-
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
-
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
-
-## Open a file
-
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-
-## Save a file
-
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-
-## Synchronize a file
-
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-
-
-# Publication
-
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-
-
-# Markdown extensions
-
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-
-
-## UML diagrams
-
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
-
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-```
-
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
+It seems that all are ready to make this alive! 
+
+    terraform init && \
+    terraform plan -var-file=default.tfvars && \ 
+    terraform apply -var-file=default.tfvars -auto-approve
+No more then in 1 minute you will get the answer:
+...
+aws_instance.k8s: Still creating... [40s elapsed]
+aws_instance.k8s: Creation complete after 42s [id=i-0c6385951d91b166b]
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+Outputs:
+ec2instance = "ec2-xx-xx-xx-xx.compute-1.amazonaws.com"
+
+and it`s almost done! Ah, wait please 2 mins to let the cloud-init script to finish the installation. And you can use next table as a hint to check your new envoirenment:
+
+|app|[http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:30010/app](http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:30010/app)|
+|grafana|[http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:30010/grafana/](http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:30010/grafana/)|
+|health|[http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:30010/health](http://ec2-xx-xx-xx-xx.compute-1.amazonaws.com:30010/health)|
+|ssh|ssh -i key_name-YOURs.pem ubuntu@ec2-xx-xx-xx-xx.compute-1.amazonaws.com |
+
+If something goes wrong, you can check the log of cloud-init script. In a normal case of installation it finished as (similar):
+
+    # tail /var/log/cloud-init-output.log
+    policies             ["root"]
+    Success! Enabled the kv secrets engine at: secret/
+    Success! Data written to: secret/grafana
+    ====== Data ======
+    Key         Value
+    ---         -----
+    password    P@ssw0rd_1
+    username    admin
+    Cloud-init v. 22.2-0ubuntu1~20.04.1 running 'modules:final' at Fri, 22 Jul 2022 14:11:47 +0000. Up 24.37 seconds.
+    Cloud-init v. 22.2-0ubuntu1~20.04.1 finished at Fri, 22 Jul 2022 14:16:11 +0000. Datasource DataSourceEc2Local.  Up 288.22 seconds
+
+## Enjoy it!
