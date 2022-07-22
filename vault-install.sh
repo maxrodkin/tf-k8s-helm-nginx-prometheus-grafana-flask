@@ -1,4 +1,5 @@
 #!/bin/bash -v
+grafana_admin_password=$1
 export KUBECONFIG=/etc/kubernetes/admin.conf
 sudo apt install -y jq > /dev/null
 
@@ -22,6 +23,6 @@ kubectl exec vault-0 -it -n vault -- vault operator unseal $VAULT_UNSEAL_KEY
 root_token=$(jq -r ".root_token" cluster-keys.json) && echo "root_token=$root_token"
 kubectl exec --stdin=true --tty=true vault-0 -n vault -- sh -c "echo $root_token | vault login - && \
 vault secrets enable -path=secret/ kv && \
-vault kv put secret/grafana username=\"admin\" password=\"Password\" && \
+vault kv put secret/grafana username=\"admin\" password=\"$grafana_admin_password\" && \
 vault kv get secret/grafana && \
 exit"

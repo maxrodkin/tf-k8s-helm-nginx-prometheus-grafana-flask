@@ -1,5 +1,6 @@
 #!/bin/bash -v
 export KUBECONFIG=/etc/kubernetes/admin.conf
+grafana_admin_password=$1
 #ingress controller
 helm upgrade --install ingress-nginx ingress-nginx   --repo https://kubernetes.github.io/ingress-nginx   --namespace ingress-nginx --create-namespace
 #prometheus
@@ -46,4 +47,4 @@ kubectl get $grafana_pod_name -n ingress-nginx
 #https://stackoverflow.com/questions/60826194/kubectl-exec-fails-with-the-error-unable-to-use-a-tty-input-is-not-a-terminal
 #have to remove -t flag:
 #kubectl exec $grafana_pod_name -it  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1
-eval "kubectl exec $grafana_pod_name -i  -n ingress-nginx -- grafana-cli admin reset-admin-password P@ssw0rd_1"
+eval "kubectl exec $grafana_pod_name -i  -n ingress-nginx -- grafana-cli admin reset-admin-password $grafana_admin_password"
