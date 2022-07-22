@@ -60,12 +60,13 @@ It seems that all are ready to make this alive!
     terraform plan -var-file=default.tfvars && \ 
     terraform apply -var-file=default.tfvars -auto-approve
 No more then in 1 minute you will get the answer:
-...
-aws_instance.k8s: Still creating... [40s elapsed]
-aws_instance.k8s: Creation complete after 42s [id=i-0c6385951d91b166b]
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-Outputs:
-ec2instance = "ec2-xx-xx-xx-xx.compute-1.amazonaws.com"
+
+    ...
+    aws_instance.k8s: Still creating... [40s elapsed]
+    aws_instance.k8s: Creation complete after 42s [id=i-0c6385951d91b166b]
+    Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+    Outputs:
+    ec2instance = "ec2-xx-xx-xx-xx.compute-1.amazonaws.com"
 
 and it`s almost done! Ah, wait please 2 mins to let the cloud-init script to finish the installation. And you can use next table as a hint to check your new envoirenment:
 
