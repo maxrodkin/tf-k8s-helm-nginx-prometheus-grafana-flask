@@ -17,7 +17,10 @@ helm install vault hashicorp/vault -n vault  --values helm-vault-raft-values.yml
 #kubectl patch po vault-0 -n vault -p '{"spec":{"affinity":{"podAntiAffinity": null}}}'
 sleep 15
 
-kubectl exec vault-0 -it -n vault -- vault operator init -key-shares=1 -key-threshold=1 -format=json > cluster-keys.json
+#because of "Unable to use a TTY - input is not a terminal or the right kind of file"
+#remove -t switch
+#kubectl exec vault-0 -it -n vault -- vault operator init -key-shares=1 -key-threshold=1 -format=json > cluster-keys.json
+kubectl exec vault-0 -i -n vault -- vault operator init -key-shares=1 -key-threshold=1 -format=json > cluster-keys.json
 VAULT_UNSEAL_KEY=$(jq -r ".unseal_keys_b64[]" cluster-keys.json) && echo "VAULT_UNSEAL_KEY=$VAULT_UNSEAL_KEY"
 kubectl exec vault-0 -it -n vault -- vault operator unseal $VAULT_UNSEAL_KEY
 root_token=$(jq -r ".root_token" cluster-keys.json) && echo "root_token=$root_token"
