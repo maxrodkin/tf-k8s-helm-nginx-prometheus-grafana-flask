@@ -17,9 +17,9 @@ kubectl exec vault-0 -it -n vault -- vault operator init -key-shares=1 -key-thre
 VAULT_UNSEAL_KEY=$(jq -r ".unseal_keys_b64[]" cluster-keys.json) && echo "$VAULT_UNSEAL_KEY"
 kubectl exec vault-0 -it -n vault -- vault operator unseal $VAULT_UNSEAL_KEY
 jq -r ".root_token" cluster-keys.json
-#kubectl exec --stdin=true --tty=true vault-0 -n vault -- sh
-#vault login
-#vault secrets enable -path=secret/ kv
-#vault kv put secret/grafana username="admin" password="Password"
-#vault kv get secret/grafana
-#exit
+#kubectl exec --stdin=true --tty=true vault-0 -n vault -- sh -c \
+vault login && \
+vault secrets enable -path=secret/ kv && \
+vault kv put secret/grafana username="admin" password="Password" && \
+vault kv get secret/grafana && \
+exit
