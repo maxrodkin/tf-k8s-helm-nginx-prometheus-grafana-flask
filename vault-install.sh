@@ -1,4 +1,5 @@
 #!/bin/bash -v
+export KUBECONFIG=/etc/kubernetes/admin.conf
 sudo apt install -y jq > /dev/null
 
 #kubectl apply -f data-vault.yaml
