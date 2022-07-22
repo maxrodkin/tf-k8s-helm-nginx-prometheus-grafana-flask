@@ -8,9 +8,6 @@ kubectl apply --kustomize github.com/maxrodkin/ingress-nginx/deploy/prometheus/
 
 public_hostname=$(curl -s http://169.254.169.254/latest/meta-data/public-hostname|tr -d " \t\n\r") && echo $public_hostname
 
-#vault
-./vault-install.sh
-
 #grafana
 #correct ini
 #https://grafana.com/tutorials/run-grafana-behind-a-proxy/
