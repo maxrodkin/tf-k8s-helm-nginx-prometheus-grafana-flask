@@ -1,4 +1,4 @@
-# # Prometheus and Grafana installation in k8s behind nginx with secrets in Vault. Ah, and flask app also 8-)
+# Prometheus and Grafana installation in k8s behind nginx with secrets in Vault. Ah, and flask app also 8-)
 
 Hi all! 
 Not so many time ago I had decided to spin up such as stack of services:
