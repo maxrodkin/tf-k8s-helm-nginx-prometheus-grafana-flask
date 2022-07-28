@@ -90,3 +90,14 @@ If something goes wrong, you can check the log of cloud-init script. In a normal
     Cloud-init v. 22.2-0ubuntu1~20.04.1 finished at Fri, 22 Jul 2022 14:16:11 +0000. Datasource DataSourceEc2Local.  Up 288.22 seconds
 
 ## Enjoy it!
+
+## Enjoy it!
+Things to do:
+    / instead nginx-standalone ingress the ingress-nginx deployment should be used
+    / should replace the ""sleep"" to asynchronous loop in:
+        * ./nginx-standalone.conf/nginx-standalone-install.sh:sleep 15
+        * ./vault-install.sh:sleep 15
+        * ./prometheus-grafana-install.sh:sleep 15 \
+        * ./prometheus-grafana-install.sh:sleep 15
+        * ./flask-install.sh:sleep 10
+    / should replace the github.com/maxrodkin/ingress-nginx source to original one with parameters or customisation
