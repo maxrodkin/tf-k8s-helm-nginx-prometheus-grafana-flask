@@ -91,13 +91,11 @@ If something goes wrong, you can check the log of cloud-init script. In a normal
 
 ## Enjoy it!
 
-## Enjoy it!
-Things to do:  
-    / instead nginx-standalone ingress the ingress-nginx deployment should be used
-    / should replace the ""sleep"" to asynchronous loop in:
-        * ./nginx-standalone.conf/nginx-standalone-install.sh:sleep 15
-        * ./vault-install.sh:sleep 15
-        * ./prometheus-grafana-install.sh:sleep 15 \
-        * ./prometheus-grafana-install.sh:sleep 15
-        * ./flask-install.sh:sleep 10
-    / should replace the github.com/maxrodkin/ingress-nginx source to original one with parameters or customisation
+## Things to do:  
+    / instead nginx-standalone ingress the ingress-nginx deployment should be used  
+    / should replace the ""sleep"" to asynchronous loop in:  
+        * ./nginx-standalone.conf/nginx-standalone-install.sh:sleep 15  
+        * ./vault-install.sh:sleep 15  
+        * ./prometheus-grafana-install.sh:sleep 15  
+        * ./flask-install.sh:sleep 10  
+    / should replace the github.com/maxrodkin/ingress-nginx source to original one with parameters or customisation  
