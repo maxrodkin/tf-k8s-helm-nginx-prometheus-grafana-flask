@@ -92,7 +92,7 @@ If something goes wrong, you can check the log of cloud-init script. In a normal
 ## Enjoy it!
 
 ## Enjoy it!
-Things to do:
+Things to do:  
     / instead nginx-standalone ingress the ingress-nginx deployment should be used
     / should replace the ""sleep"" to asynchronous loop in:
         * ./nginx-standalone.conf/nginx-standalone-install.sh:sleep 15
